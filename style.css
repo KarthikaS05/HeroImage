@@ -1,0 +1,172 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: #f3f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  margin-top: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content; /* to define the ht of the header since pos fixed makes it inline - block elem ; hene specify thw above  prop min */
+  border: 1px solid rgb(44, 44, 2);
+}
+
+/* common propertie for the container */
+.container {
+  width: 90%;
+  margin: 0 50px;
+}
+
+/*  */
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid blue;
+  padding: 30px;
+}
+.logo {
+  width: 500px;
+}
+
+.logo img {
+  width: 100%;
+}
+.nav__items {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navItem {
+  margin: 10px;
+  padding: 4px 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.navItem:hover,
+.navItem.active {
+  background-color: black;
+  color: white;
+}
+
+.navItem:hover a,
+.navItem.active a {
+  color: white;
+}
+
+/* TODO: active styling on click of each nav bar item */
+/* home pg is always full window size , ie 100vh */
+
+/* Tip : Always use vh on the parent and % on the child */
+#home {
+  border: 1px solid orangered;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top:30%;
+
+  
+}
+
+#home .container {
+  height: 100%;
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid red;
+ 
+}
+/* to defin common properties for a col in home section */
+#home .col {
+  width: 50%;
+  flex-basis: 50%; /* fall bck if width =50% doesnt work */
+  height: 100%; /* Since ht for the section(home) is defined as 10vh */
+}
+.col-left {
+  border: 1px solid green;
+  position: relative;
+}
+/* For the yellow border ring around the img */
+.col-left::before {
+  content: "";
+  width: 600px;
+  height: 600px;
+  border: 2px solid rgb(255, 174, 0);
+  position: absolute;
+  top: 0;
+  left: 20px;
+  padding: 20px;
+  border-radius: 50%;
+  transform: translateY(-15%);
+}
+/* styling for the img */
+.col-left img {
+  width: 535px;
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  bottom: 50px;
+  transform-origin: right;
+  transform: translate(20px, -60px);
+}
+
+.col-right {
+  
+  height: 100%;
+  border: 1px solid purple;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+.socialBar {
+  height: 100px;
+  width:100%;
+  position: absolute;
+  top:80%;
+  left:0;
+  background-color: aquamarine;
+ z-index: 2;
+ display: flex;
+ align-items: center;
+}
+
