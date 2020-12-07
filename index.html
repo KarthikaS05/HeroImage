@@ -9,7 +9,10 @@
   style.css"
     />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+   
     <title>Music Hero Image</title>
+    <script src="script.js" defer></script>
+  </head>
   </head>
   <body>
     <!-- --------------------------- header of page ---------------------------- -->
@@ -24,7 +27,7 @@
 
         <nav>
           <ul class="nav__items">
-            <li class="navItem"><a href="#">HOME</a></li>
+            <li class="navItem active"><a href="#">HOME</a></li>
             <li class="navItem"><a href="#">ABOUT</a></li>
             <li class="navItem">
               <a
@@ -48,12 +51,29 @@
 
         <div class="col col-left">
           <img src="img/girl.png" alt="" />
+          <img
+            src="img/shape__dots--white.png"
+            alt="end dot block"
+            class="dotBlock2"
+          />
+          <div class="play-texts">
+            <h2 class="play">Play</h2>
+            <h2 class="play">Play</h2>
+            <h2 class="play">Play</h2>
+          </div>
         </div>
 
         <!-- ----------------------------- right side ------------------------------ -->
 
         <div class="col col-right">
-          <h2>Explore your</h2>
+          <img
+            class="dotBlock1"
+            src="img/shape__dots--white.png"
+            alt="dot block img"
+          />
+          <img src="img/shape-triangle.png" alt="" class="shapeTriangle" />
+          <div class="shapeSqr"></div>
+          <h2>Explore Your</h2>
           <h1>MUSIC</h1>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis iure
@@ -62,23 +82,42 @@
             dolorum alias!
           </p>
           <button>Learn More</button>
+          <div class="circle3"></div>
+          <div class="circle4"></div>
         </div>
-         
-          <div class="socialBar">
-            <ul class="socialBarItems">
-              <li class="socialLink">
-                <a href=""><ion-icon name="logo-google"></ion-icon></a>
-              </li>
-              <li class="socialLink">
-                <a href=""><ion-icon name="logo-facebook"></ion-icon></a>
-              </li>
-              <li class="socialLink">
-                <a href=""><ion-icon name="logo-instagram"></ion-icon></a>
-              </li>
-            </ul>
+
+        <div class="socialBar">
+          <div class="shapeCircle circle1"></div>
+
+          <ul class="socialBarItems">
+            <li class="socialLink">
+              <a href="#"><i class="fab fa-google"></i></a>
+            </li>
+            <li class="socialLink">
+              <a href=""><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li class="socialLink">
+              <a href=""><i class="fab fa-instagram"></i></a>
+            </li>
+          </ul>
+
+          <div class="shapeCircle circle2"></div>
+          <img
+            src="img/shape__dots--yellow.png"
+            alt="yellow dots block"
+            class="yellowDotBlock"
+          />
+          <div class="music-texts">
+            <h2 class="music">music</h2>
+            <h2 class="music">music</h2>
+            <h2 class="music">music</h2>
           </div>
-       
+        </div>
       </div>
     </section>
+    <script
+      src="https://kit.fontawesome.com/39e3737a5f.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

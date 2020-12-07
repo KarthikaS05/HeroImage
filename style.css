@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 *,
 *::before,
 *::after {
@@ -9,11 +10,13 @@
 body {
   height: 100vh;
   background: #f3f1f1;
-  display: flex;
+  /*  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   width: 100%;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
 }
 
 ul,
@@ -33,44 +36,43 @@ header {
   left: 0;
   width: 100%;
   height: fit-content; /* to define the ht of the header since pos fixed makes it inline - block elem ; hene specify thw above  prop min */
-  border: 1px solid rgb(44, 44, 2);
+  z-index: 1;
 }
 
 /* common propertie for the container */
 .container {
   width: 90%;
-  margin: 0 50px;
+  margin: auto; /* put auto to align the container center */
 }
 
-/*  */
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid blue;
-  padding: 30px;
 }
+/* tip:give ht instead of width so that mall value is used; ideal logo ht ranges bw 40- 80px */
 .logo {
-  width: 500px;
+  height: 50px;
 }
 
 .logo img {
-  width: 100%;
+  height: 100%;
 }
+
 .nav__items {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .navItem {
-  margin: 10px;
-  padding: 4px 8px;
+  margin-left: 10px;
+  padding: 2px 6px;
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
   cursor: pointer;
 }
 
@@ -88,37 +90,31 @@ header .container {
 /* TODO: active styling on click of each nav bar item */
 /* home pg is always full window size , ie 100vh */
 
-/* Tip : Always use vh on the parent and % on the child */
+/* Tip : Always use vh on the parent and % on the child
+never define the position in section; instead speify it in container */
 #home {
-  border: 1px solid orangered;
   height: 100vh;
   width: 100%;
+  margin-top: 10vh; /* margin top is givn n vh to maintain the section afer header */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  top:30%;
-
-  
+  overflow: hidden;
 }
 
 #home .container {
   height: 100%;
-  padding-top: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid red;
- 
 }
 /* to defin common properties for a col in home section */
 #home .col {
   width: 50%;
   flex-basis: 50%; /* fall bck if width =50% doesnt work */
-  height: 100%; /* Since ht for the section(home) is defined as 10vh */
+  height: 100%; /* Since ht for the section(home) is defined as 100vh */
 }
 .col-left {
-  border: 1px solid green;
   position: relative;
 }
 /* For the yellow border ring around the img */
@@ -128,45 +124,241 @@ header .container {
   height: 600px;
   border: 2px solid rgb(255, 174, 0);
   position: absolute;
-  top: 0;
-  left: 20px;
+  top: 30px;
+  left: 0px;
   padding: 20px;
   border-radius: 50%;
-  transform: translateY(-15%);
+  transform: translate(-2%, -5%);
 }
 /* styling for the img */
+/* tip : always adjust width for the img to maintine aspect ratio; ht will get adjusted accordingly */
 .col-left img {
   width: 535px;
   position: absolute;
-  top: 0px;
-  left: 50px;
-  bottom: 50px;
-  transform-origin: right;
-  transform: translate(20px, -60px);
+  top: 35px;
+  left: 0px;
+  transform: translate(40px, -5px);
+}
+
+.play-texts {
+  position: absolute;
+  top: 40%;
+  left: -25px;
+}
+
+.play {
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 45px;
+  -webkit-text-stroke: 2px black;
+  letter-spacing: 1px;
+  color: transparent;
 }
 
 .col-right {
-  
   height: 100%;
-  border: 1px solid purple;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
   align-items: center;
   position: relative;
 }
 
-
-.socialBar {
-  height: 100px;
-  width:100%;
-  position: absolute;
-  top:80%;
-  left:0;
-  background-color: aquamarine;
- z-index: 2;
- display: flex;
- align-items: center;
+.col-right h2 {
+  font-size: 40px;
+  font-weight: 900;
+  margin-top: 90px;
 }
 
+.col-right h1 {
+  text-transform: uppercase;
+  font-size: 80px;
+  -webkit-text-stroke: 2px #000; /* to give a text outline */
+  font-weight: 900;
+  color: transparent;
+}
+
+.col-right p {
+  font-weight: 500;
+  font-size: 15px;
+  margin: 30px;
+}
+
+.col-right button {
+  margin-top: 30px;
+  background: #ffc919;
+  padding: 8px 20px;
+  border-radius: 50px;
+  border: 2px solid #000;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 15px;
+  box-shadow: 0px 8px 10px rgba(255, 201, 25, 0.541);
+  margin-top: 30px;
+  transition: all 0.3s ease;
+}
+
+.col-right button:hover {
+  transform: translateY(2px);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.socialBar {
+  height: 140px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+/* made a before elem similar to social bar inorder to bring it behind the main img */
+.socialBar::before {
+  content: "";
+  height: 140px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #6d6b6b38;
+  z-index: -1;
+}
+
+.socialBarItems {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 8%;
+}
+
+.socialLink {
+  font-size: 20px;
+  position: relative;
+  margin: 0px 10px;
+  width: 35px;
+  height: 35px;
+  background: #000;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.socialLink i {
+  color: #d6d6d6;
+}
+
+.socialLink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 2px 5px rgba(255, 201, 25, 1);
+}
+.socialLink i:hover {
+  color: #ffc919;
+}
+
+/* ---------------------------- Styling of shapes --------------------------- */
+
+.col-right .dotBlock1 {
+  width: 80px;
+  position: absolute;
+  top: 0;
+  left: -35%;
+  transform: translate(-15%, 15%);
+}
+
+.shapeTriangle {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  height: 20px;
+}
+
+.shapeSqr {
+  position: absolute;
+  top: 10px;
+  left: 55%;
+  width: 30px;
+  height: 30px;
+  background: #efb81d;
+}
+
+.col-left .dotBlock2 {
+  width: 80px;
+  position: absolute;
+  top: 65%;
+  left: 40%;
+  transform: rotate(90deg);
+  z-index: 1;
+}
+
+.shapeCircle {
+  background: transparent;
+  border-radius: 50%;
+}
+.socialBar .circle1 {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: 35px solid #efb81d;
+  transform: translate(-50%, 60%);
+}
+
+.socialBar .circle2 {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border: 10px solid #efb81d;
+  transform: translateX(-50%);
+}
+
+.circle3 {
+  position: absolute;
+  top: 60%;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #efb81d;
+}
+
+.circle4 {
+  position: absolute;
+  top: 50px;
+  right: -80px;
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  border-radius: 50%;
+  border: 10px solid #efb81d;
+  transform: translateX(50%);
+}
+.socialBar .yellowDotBlock {
+  position: absolute;
+  bottom: 50px;
+  left: 65%;
+  height: 60px;
+}
+
+.music-texts {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.music {
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 45px;
+  -webkit-text-stroke: 2px #efb81d;
+  letter-spacing: 1px;
+  color: transparent;
+}
